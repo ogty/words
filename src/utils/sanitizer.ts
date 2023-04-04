@@ -1,0 +1,32 @@
+export const sanitizer = (word: string): string => {
+  const replacements = [
+    '.',
+    '-',
+    '+',
+    '/',
+    ' ',
+    ':',
+    ';',
+    ',',
+    '!',
+    '@',
+    '#',
+    '$',
+    '%',
+    '^',
+    '&',
+    '*',
+    '(',
+    ')',
+    '=',
+    '{',
+    '}',
+    '[',
+    ']',
+    "'",
+    '"',
+    '\\',
+    '~',
+  ];
+  return replacements.reduce((acc, cur) => acc.replace(cur, ''), word);
+};
